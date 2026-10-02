@@ -1,0 +1,28 @@
+{
+  "name": "紅樓夢脂評匯校本",
+  "short_name": "脂評紅樓夢",
+  "key": "zphlm",
+  "description": "曹雪芹著 · 脂硯齋評 · 吳銘恩匯校《紅樓夢脂評匯校本》八十回全本共讀",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ed",
+  "theme_color": "#991b1e",
+  "coverAsset": {
+    "publicFile": "assets/cover.webp"
+  },
+  "publicationBoundary": {
+    "sourceDocumentsPublished": false,
+    "fullPageRendersPublished": false
+  },
+  "counts": {
+    "chapters": 87,
+    "segments": 3643
+  },
+  "icons": [
+    {
+      "src": "https://img.bdfz.net/20250503004.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ]
+}

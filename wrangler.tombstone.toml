@@ -1,0 +1,16 @@
+name = "zphlm-reader"
+main = "src/tombstone.js"
+compatibility_date = "2026-08-08"
+workers_dev = false
+preview_urls = false
+
+[vars]
+BOOK_ID = "zphlm"
+BOOK_EDITION = "2014"
+
+[version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[[routes]]
+pattern = "zphlm.bdfz.net/*"
+zone_name = "bdfz.net"

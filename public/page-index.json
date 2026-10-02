@@ -1,0 +1,527 @@
+{
+  "book": "zphlm",
+  "chapters": [
+    {
+      "id": "intro",
+      "title": "《紅樓夢脂評匯校本》整理說明",
+      "section": "整理說明",
+      "segmentCount": 8
+    },
+    {
+      "id": "fanli",
+      "title": "脂硯齋重評石頭記凡例〔一〕",
+      "section": "凡例",
+      "segmentCount": 12
+    },
+    {
+      "id": "c01",
+      "title": "第一回　甄士隱夢幻識通靈　賈雨村風塵懷閨秀",
+      "section": "前八十回正文",
+      "segmentCount": 91
+    },
+    {
+      "id": "c02",
+      "title": "第二回　賈夫人仙逝揚州城　冷子興演說榮國府",
+      "section": "前八十回正文",
+      "segmentCount": 39
+    },
+    {
+      "id": "c03",
+      "title": "第三回　金陵城起復賈雨村　榮國府收養二字觸目凄凉之至！林黛玉",
+      "section": "前八十回正文",
+      "segmentCount": 36
+    },
+    {
+      "id": "c04",
+      "title": "第四回　薄命女偏逢薄命郎　葫蘆僧亂判葫蘆案",
+      "section": "前八十回正文",
+      "segmentCount": 28
+    },
+    {
+      "id": "c05",
+      "title": "第五回　開生面夢演紅樓夢　立新場情傳幻境情",
+      "section": "前八十回正文",
+      "segmentCount": 123
+    },
+    {
+      "id": "c06",
+      "title": "第六回　賈寶玉初試雲雨情　劉姥姥一進榮國府",
+      "section": "前八十回正文",
+      "segmentCount": 35
+    },
+    {
+      "id": "c07",
+      "title": "第七回　送宮花周瑞嘆英蓮　談肄業秦鍾結寶玉",
+      "section": "前八十回正文",
+      "segmentCount": 35
+    },
+    {
+      "id": "c08",
+      "title": "第八回　薛寶釵小恙梨香院　賈寶玉大醉絳芸軒",
+      "section": "前八十回正文",
+      "segmentCount": 38
+    },
+    {
+      "id": "c09",
+      "title": "第九回　戀風流情友入家塾　起嫌疑頑童鬧學堂",
+      "section": "前八十回正文",
+      "segmentCount": 22
+    },
+    {
+      "id": "c10",
+      "title": "第十回　金寡婦貪利權受辱　張太醫論病細窮源",
+      "section": "前八十回正文",
+      "segmentCount": 23
+    },
+    {
+      "id": "c11",
+      "title": "第十一回　慶壽辰寧府排家宴　見熙鳳賈瑞起淫心",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c12",
+      "title": "第十二回　王熙鳳毒設相思局　賈天祥正照風月鑑",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c13",
+      "title": "第十三回　秦可卿死封龍禁尉　王熙鳳協理寧國府",
+      "section": "前八十回正文",
+      "segmentCount": 48
+    },
+    {
+      "id": "c14",
+      "title": "第十四回　林如海捐館揚州城　賈寶玉路謁北靜王",
+      "section": "前八十回正文",
+      "segmentCount": 37
+    },
+    {
+      "id": "c15",
+      "title": "第十五回　王熙鳳弄權鐵檻寺　秦鯨卿得趣饅頭庵",
+      "section": "前八十回正文",
+      "segmentCount": 29
+    },
+    {
+      "id": "c16",
+      "title": "第十六回　賈元春才選鳳藻宮　秦鯨卿夭逝黃泉路",
+      "section": "前八十回正文",
+      "segmentCount": 41
+    },
+    {
+      "id": "c17",
+      "title": "第十七回　大觀園試才題對額　榮國府歸省慶元宵",
+      "section": "前八十回正文",
+      "segmentCount": 49
+    },
+    {
+      "id": "c18",
+      "title": "第十八回　大觀園試才題對額　榮國府歸省慶元宵（續）",
+      "section": "前八十回正文",
+      "segmentCount": 92
+    },
+    {
+      "id": "c19",
+      "title": "第十九回　情切切良宵花解語　意綿綿靜日玉生香〔一〕",
+      "section": "前八十回正文",
+      "segmentCount": 42
+    },
+    {
+      "id": "c20",
+      "title": "第二十回　王熙鳳正言彈妒意　林黛玉俏語謔嬌音",
+      "section": "前八十回正文",
+      "segmentCount": 19
+    },
+    {
+      "id": "c21",
+      "title": "第二十一回　賢襲人當得起。嬌嗔箴寶玉　俏平兒軟語救賈璉",
+      "section": "前八十回正文",
+      "segmentCount": 30
+    },
+    {
+      "id": "c22",
+      "title": "第二十二回　聽曲文寶玉悟禪機　製燈謎賈政悲讖語",
+      "section": "前八十回正文",
+      "segmentCount": 59
+    },
+    {
+      "id": "c23",
+      "title": "第二十三回　西厢記妙詞通戲語　牡丹亭艶曲警芳心",
+      "section": "前八十回正文",
+      "segmentCount": 47
+    },
+    {
+      "id": "c24",
+      "title": "第二十四回　醉金剛輕財尚義俠　痴女兒遺帕惹相思",
+      "section": "前八十回正文",
+      "segmentCount": 32
+    },
+    {
+      "id": "c25",
+      "title": "第二十五回　魘魔法叔嫂逢五鬼　通靈玉蒙蔽遇雙真",
+      "section": "前八十回正文",
+      "segmentCount": 48
+    },
+    {
+      "id": "c26",
+      "title": "第二十六回　蜂腰橋設言傳蜜意　瀟湘館春困發幽情",
+      "section": "前八十回正文",
+      "segmentCount": 44
+    },
+    {
+      "id": "c27",
+      "title": "第二十七回　滴翠亭楊妃戲彩蝶　埋香冢飛燕泣殘紅",
+      "section": "前八十回正文",
+      "segmentCount": 59
+    },
+    {
+      "id": "c28",
+      "title": "第二十八回　蔣玉菡情贈茜香羅　薛寶釵羞籠紅麝串",
+      "section": "前八十回正文",
+      "segmentCount": 70
+    },
+    {
+      "id": "c29",
+      "title": "第二十九回　享福人福深還禱福　痴情女情重愈斟情",
+      "section": "前八十回正文",
+      "segmentCount": 31
+    },
+    {
+      "id": "c30",
+      "title": "第三十回　寶釵借扇機帶雙敲　齡官劃薔痴及局外",
+      "section": "前八十回正文",
+      "segmentCount": 23
+    },
+    {
+      "id": "c31",
+      "title": "第三十一回　撕扇子作千金一笑　因麒麟伏白首雙星",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c32",
+      "title": "第三十二回　訴肺腑心迷活寶玉　含耻辱情烈死金釧",
+      "section": "前八十回正文",
+      "segmentCount": 24
+    },
+    {
+      "id": "c33",
+      "title": "第三十三回　手足耽耽小動唇舌　不肖種種大承笞撻",
+      "section": "前八十回正文",
+      "segmentCount": 22
+    },
+    {
+      "id": "c34",
+      "title": "第三十四回　情中情因情感妹妹　錯裡錯以錯勸哥哥",
+      "section": "前八十回正文",
+      "segmentCount": 34
+    },
+    {
+      "id": "c35",
+      "title": "第三十五回　白玉釧親嚐蓮葉羹　黃金鶯巧結梅花絡",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c36",
+      "title": "第三十六回　綉鴛鴦夢兆絳芸軒　識分定情悟梨香院",
+      "section": "前八十回正文",
+      "segmentCount": 23
+    },
+    {
+      "id": "c37",
+      "title": "第三十七回　秋爽齋偶結海棠社　蘅蕪苑夜擬菊花題",
+      "section": "前八十回正文",
+      "segmentCount": 66
+    },
+    {
+      "id": "c38",
+      "title": "第三十八回　林瀟湘魁奪菊花詩　薛蘅蕪諷和螃蟹咏",
+      "section": "前八十回正文",
+      "segmentCount": 98
+    },
+    {
+      "id": "c39",
+      "title": "第三十九回　村姥姥是信口開河　情哥哥偏尋根究底",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c40",
+      "title": "第四十回　史太君兩宴大觀園　金鴛鴦三宣牙牌令",
+      "section": "前八十回正文",
+      "segmentCount": 36
+    },
+    {
+      "id": "c41",
+      "title": "第四十一回　櫳翠庵茶品梅花雪　怡紅院劫遇母蝗蟲",
+      "section": "前八十回正文",
+      "segmentCount": 28
+    },
+    {
+      "id": "c42",
+      "title": "第四十二回　蘅蕪君蘭言解疑癖　瀟湘子雅謔補餘香",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c43",
+      "title": "第四十三回　閒取樂偶攢金慶壽　不了情暫撮土為香",
+      "section": "前八十回正文",
+      "segmentCount": 27
+    },
+    {
+      "id": "c44",
+      "title": "第四十四回　變生不測鳳姐潑醋　喜出望外平兒理妝",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c45",
+      "title": "第四十五回　金蘭契互剖金蘭語　風雨夕悶製風雨詞",
+      "section": "前八十回正文",
+      "segmentCount": 31
+    },
+    {
+      "id": "c46",
+      "title": "第四十六回　尷尬人難免尷尬事　鴛鴦女誓絕鴛鴦偶",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c47",
+      "title": "第四十七回　呆霸王調情遭苦打　冷郎君懼禍走他鄉",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c48",
+      "title": "第四十八回　濫情人情誤思遊藝　慕雅女雅集苦吟詩",
+      "section": "前八十回正文",
+      "segmentCount": 33
+    },
+    {
+      "id": "c49",
+      "title": "第四十九回　琉璃世界白雪紅梅　脂粉香娃割腥啖膻",
+      "section": "前八十回正文",
+      "segmentCount": 32
+    },
+    {
+      "id": "c50",
+      "title": "第五十回　蘆雪广爭聯即景詩　暖香塢雅製春燈謎",
+      "section": "前八十回正文",
+      "segmentCount": 141
+    },
+    {
+      "id": "c51",
+      "title": "第五十一回　薛小妹新編懷古詩　胡庸醫亂用虎狼藥",
+      "section": "前八十回正文",
+      "segmentCount": 52
+    },
+    {
+      "id": "c52",
+      "title": "第五十二回　俏平兒情掩蝦鬚鐲　勇晴雯病補雀金裘",
+      "section": "前八十回正文",
+      "segmentCount": 27
+    },
+    {
+      "id": "c53",
+      "title": "第五十三回　寧國府除夕祭宗祠　榮國府元宵開夜宴",
+      "section": "前八十回正文",
+      "segmentCount": 34
+    },
+    {
+      "id": "c54",
+      "title": "第五十四回　史太君破陳腐舊套　王熙鳳效戲彩斑衣",
+      "section": "前八十回正文",
+      "segmentCount": 39
+    },
+    {
+      "id": "c55",
+      "title": "第五十五回　辱親女愚妾爭閒氣　欺幼主刁奴蓄險心",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c56",
+      "title": "第五十六回　敏探春興利除宿弊　時寶釵小惠全大體",
+      "section": "前八十回正文",
+      "segmentCount": 24
+    },
+    {
+      "id": "c57",
+      "title": "第五十七回　慧紫鵑情辭試忙玉　慈姨媽愛語慰痴顰",
+      "section": "前八十回正文",
+      "segmentCount": 33
+    },
+    {
+      "id": "c58",
+      "title": "第五十八回　杏子陰假鳳泣虛凰　茜紗窗真情揆痴理",
+      "section": "前八十回正文",
+      "segmentCount": 22
+    },
+    {
+      "id": "c59",
+      "title": "第五十九回　柳葉渚邊嗔鶯咤燕　絳芸軒裡召將飛符",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c60",
+      "title": "第六十回　茉莉粉替去薔薇硝　玫瑰露引來茯苓霜",
+      "section": "前八十回正文",
+      "segmentCount": 29
+    },
+    {
+      "id": "c61",
+      "title": "第六十一回　投鼠忌器寶玉情贓　判冤决獄平兒情權〔一〕",
+      "section": "前八十回正文",
+      "segmentCount": 21
+    },
+    {
+      "id": "c62",
+      "title": "第六十二回　憨湘雲醉眠芍藥裀　呆香菱情解石榴裙",
+      "section": "前八十回正文",
+      "segmentCount": 48
+    },
+    {
+      "id": "c63",
+      "title": "第六十三回　壽怡紅群芳開夜宴　死金丹獨艶理親喪",
+      "section": "前八十回正文",
+      "segmentCount": 54
+    },
+    {
+      "id": "c64",
+      "title": "第六十四回　幽淑女悲題五美吟　浪蕩子情遺九龍珮",
+      "section": "前八十回正文",
+      "segmentCount": 59
+    },
+    {
+      "id": "c65",
+      "title": "第六十五回　賈二舍偷娶尤二姨　尤三姐思嫁柳二郎",
+      "section": "前八十回正文",
+      "segmentCount": 23
+    },
+    {
+      "id": "c66",
+      "title": "第六十六回　情小妹耻情歸地府　冷二郎一冷入空門",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c67",
+      "title": "第六十七回　饋土物顰卿念故里　訊家童鳳姐蓄陰謀〔一〕",
+      "section": "前八十回正文",
+      "segmentCount": 54
+    },
+    {
+      "id": "c68",
+      "title": "第六十八回　苦尤娘賺入大觀園　酸鳳姐大鬧寧國府",
+      "section": "前八十回正文",
+      "segmentCount": 20
+    },
+    {
+      "id": "c69",
+      "title": "第六十九回　弄小巧用借劍殺人　覺大限吞生金自逝",
+      "section": "前八十回正文",
+      "segmentCount": 21
+    },
+    {
+      "id": "c70",
+      "title": "第七十回　林黛玉重建桃花社　史湘雲偶填柳絮詞",
+      "section": "前八十回正文",
+      "segmentCount": 50
+    },
+    {
+      "id": "c71",
+      "title": "第七十一回　嫌隙人有心生嫌隙　鴛鴦女無意遇鴛鴦",
+      "section": "前八十回正文",
+      "segmentCount": 32
+    },
+    {
+      "id": "c72",
+      "title": "第七十二回　王熙鳳恃强羞說病　來旺婦倚勢霸成親",
+      "section": "前八十回正文",
+      "segmentCount": 23
+    },
+    {
+      "id": "c73",
+      "title": "第七十三回　痴丫頭誤拾綉春囊　懦小姐不問累金鳳",
+      "section": "前八十回正文",
+      "segmentCount": 39
+    },
+    {
+      "id": "c74",
+      "title": "第七十四回　惑奸讒抄檢大觀園　矢孤介杜絕寧國府",
+      "section": "前八十回正文",
+      "segmentCount": 38
+    },
+    {
+      "id": "c75",
+      "title": "第七十五回　開夜宴異兆發悲音　賞中秋新詞得佳讖",
+      "section": "前八十回正文",
+      "segmentCount": 30
+    },
+    {
+      "id": "c76",
+      "title": "第七十六回　凸碧堂品笛感凄清　凹晶館聯詩悲寂寞",
+      "section": "前八十回正文",
+      "segmentCount": 80
+    },
+    {
+      "id": "c77",
+      "title": "第七十七回　俏丫鬟抱屈夭風流　美優伶斬情歸水月",
+      "section": "前八十回正文",
+      "segmentCount": 31
+    },
+    {
+      "id": "c78",
+      "title": "第七十八回　老學士閒徵姽嫿詞　痴公子杜撰芙蓉誄",
+      "section": "前八十回正文",
+      "segmentCount": 91
+    },
+    {
+      "id": "c79",
+      "title": "第七十九回　薛文龍悔娶河東獅　賈迎春誤嫁中山狼",
+      "section": "前八十回正文",
+      "segmentCount": 25
+    },
+    {
+      "id": "c80",
+      "title": "第八十回　薛文龍悔娶河東獅　賈迎春誤嫁中山狼（續）〔一〕",
+      "section": "前八十回正文",
+      "segmentCount": 22
+    },
+    {
+      "id": "app01",
+      "title": "《紅樓夢》各抄本收藏者序跋",
+      "section": "附錄文獻",
+      "segmentCount": 22
+    },
+    {
+      "id": "app02",
+      "title": "存世脂評系統《紅樓夢》版本簡介",
+      "section": "附錄文獻",
+      "segmentCount": 73
+    },
+    {
+      "id": "app03",
+      "title": "毛國瑤抄錄靖藏本批語一百五十條",
+      "section": "附錄文獻",
+      "segmentCount": 206
+    },
+    {
+      "id": "notes",
+      "title": "《紅樓夢脂評匯校本》校讀札記",
+      "section": "校讀札記",
+      "segmentCount": 155
+    },
+    {
+      "id": "about",
+      "title": "版權與出版說明",
+      "section": "出版說明",
+      "segmentCount": 6
+    }
+  ]
+}

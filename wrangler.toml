@@ -1,0 +1,40 @@
+name = "zphlm-reader"
+main = "src/release-entry.js"
+compatibility_date = "2026-08-08"
+workers_dev = false
+preview_urls = false
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[observability]
+enabled = true
+head_sampling_rate = 0.1
+
+[vars]
+BOOK_ID = "zphlm"
+BOOK_EDITION = "2014"
+USER_CENTER_ORIGIN = "https://my.bdfz.net"
+
+[version_metadata]
+binding = "CF_VERSION_METADATA"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zphlm-reactions"
+database_id = "ead1c312-1ecd-4609-9745-85995f2e7847"
+
+[[routes]]
+pattern = "zphlm.bdfz.net/*"
+zone_name = "bdfz.net"
+
+[[services]]
+binding = "USER_CENTER"
+service = "bdfz-user-center"
+
+[[services]]
+binding = "GROWTH_EVIDENCE"
+service = "bdfz-user-center"
+entrypoint = "ZphlmGrowthEvidence"
