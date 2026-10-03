@@ -44,6 +44,9 @@
   };
   var displayedChapter = null;
   var chapterCache = {};
+  var viewScroll = { read: 0, rankings: 0, about: 0 };
+  var chapterRequest = 0;
+  var drawerFocus = null;
 
   function uid() {
     var v = lsGet(BOOK_ID + "_uid");
@@ -76,11 +79,11 @@
   var notesStorage = null;
   function initNotesStorage() {
     if (notesStorage) return notesStorage;
-    if (window.DylanPrivateNotes) {
-      notesStorage = window.DylanPrivateNotes.createStore({
-        storageKey: BOOK_ID + "_pnotes",
-        maxNoteLength: 12000,
-        maxCount: 5000
+    if (window.ZPHLMStorage) {
+      notesStorage = window.ZPHLMStorage.create({
+        sourceSetDigest: "0cf6397131499a4a9818076f5f19806dc26e594ba649f0a8bc78d96d6ea18e64",
+        noteStorageAnchor: "zphlm-2014-v1",
+        onUnavailable: function () { toast("瀏覽器無法保存：筆記暫存於本次開啟，請匯出備份。"); }
       });
     }
     return notesStorage;
@@ -135,6 +138,8 @@
 
   // ── render views ──
   function switchView(name) {
+    if (["read", "rankings", "about"].indexOf(name) < 0 || name === state.view) return;
+    viewScroll[state.view] = window.scrollY;
     state.view = name;
     var views = ["read", "rankings", "about"];
     views.forEach(function (v) {
@@ -151,11 +156,14 @@
       }
       if (btn) {
         btn.classList.toggle("active", v === name);
+        if (v === name) btn.setAttribute("aria-current", "page");
+        else btn.removeAttribute("aria-current");
       }
     });
-    if (name === "rankings") loadRankings();
+    if (name === "rankings") { viewScroll.rankings = 0; loadRankings(); }
     if (name === "about") renderAbout();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.getElementById("read-progress").hidden = name !== "read";
+    window.scrollTo({ top: viewScroll[name] || 0, behavior: "instant" });
   }
 
   function renderChapter(c, segments) {
@@ -242,6 +250,7 @@
   }
 
   function loadAndDisplay(chapterId, anchorId) {
+    var requestId = ++chapterRequest;
     var c = CH[chapterIndex(chapterId)];
     if (!c) c = CH[0];
     state.currentChapter = c.id;
@@ -250,11 +259,16 @@
     if (displayedChapter !== c.id) {
       container.innerHTML = '<div class="chapter-loading" style="text-align:center;padding:60px 0;color:var(--ink-faint);">正在載入 ' + esc(t(c, "zh")) + '…</div>';
       fetchChapter(c.id).then(function (segments) {
+        if (requestId !== chapterRequest) return;
         renderChapter(c, segments);
+        viewScroll.read = 0;
+        if (state.view !== "read") return;
         if (anchorId) scrollToAnchor(anchorId);
         else window.scrollTo({ top: 0, behavior: "auto" });
       }).catch(function (err) {
-        container.innerHTML = '<div class="chapter-error" style="text-align:center;padding:60px 0;color:var(--cinnabar);">' + esc(err.message) + '</div>';
+        if (requestId !== chapterRequest) return;
+        container.innerHTML = '<div class="chapter-error" role="alert" style="text-align:center;padding:60px 0;color:var(--cinnabar);">' + esc(err.message) + '<p><button type="button" class="secondary-button" id="retry-chapter">重新載入</button></p></div>';
+        document.getElementById("retry-chapter").onclick = function () { loadAndDisplay(c.id, anchorId); };
       });
     } else {
       if (anchorId) scrollToAnchor(anchorId);
@@ -314,15 +328,27 @@
   function openDrawer() {
     var layer = document.getElementById("drawer-layer");
     if (!layer) return;
+    drawerFocus = document.activeElement;
     layer.removeAttribute("hidden");
-    renderDrawerNav();
+    document.body.classList.add("drawer-open");
+    document.getElementById("menu-button").setAttribute("aria-expanded", "true");
+    document.getElementById("site-frame").inert = true;
+    document.querySelector(".bottom-nav").inert = true;
+    renderDrawerNav(document.getElementById("chapter-search").value);
     updateDrawerActive();
     var activeItem = document.querySelector(".drawer-item.is-current");
     if (activeItem) activeItem.scrollIntoView({ block: "nearest" });
+    document.getElementById("chapter-search").focus({ preventScroll: true });
   }
   function closeDrawer() {
     var layer = document.getElementById("drawer-layer");
     if (layer) layer.setAttribute("hidden", "");
+    document.body.classList.remove("drawer-open");
+    document.getElementById("menu-button").setAttribute("aria-expanded", "false");
+    document.getElementById("site-frame").inert = false;
+    document.querySelector(".bottom-nav").inert = false;
+    if (drawerFocus) drawerFocus.focus({ preventScroll: true });
+    drawerFocus = null;
   }
 
   // ── Reactions & Social ──
@@ -449,7 +475,9 @@
 
     var store = initNotesStorage();
     if (store && txtEl) {
-      txtEl.value = store.get(segId) || "";
+      var note = store.getNote(segId);
+      txtEl.value = note ? note.text : "";
+      if (statusEl && !store.isPersistent()) statusEl.textContent = "僅暫存本次開啟，關閉前請匯出備份。";
     }
     if (dlg) dlg.showModal();
   }
@@ -463,10 +491,10 @@
 
     var text = txtEl.value.trim();
     if (text) {
-      store.set(segId, text);
-      toast("筆記已保存");
+      store.saveNote(segId, text);
+      toast(store.isPersistent() ? "筆記已保存於這台裝置" : "筆記僅暫存本次開啟，請匯出備份");
     } else {
-      store.remove(segId);
+      store.deleteNote(segId);
       toast("筆記已清空");
     }
     var dlg = document.getElementById("note-dialog");
@@ -477,7 +505,7 @@
     var segId = state.activeSegId;
     var store = initNotesStorage();
     if (store && segId) {
-      store.remove(segId);
+      store.deleteNote(segId);
       toast("筆記已刪除");
     }
     var dlg = document.getElementById("note-dialog");
@@ -569,12 +597,13 @@
       expBtn.onclick = function () {
         var store = initNotesStorage();
         if (!store) return;
-        var data = store.exportAll();
+        var data = store.exportNotes();
         var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
         var a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
         a.download = "zphlm-notes-backup-" + new Date().toISOString().slice(0, 10) + ".json";
         a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
       };
     }
     if (impBtn && impInput) {
@@ -582,17 +611,19 @@
       impInput.onchange = function () {
         var f = impInput.files && impInput.files[0];
         if (!f) return;
+        impInput.value = "";
+        if (f.size > 5 * 1024 * 1024) { toast("備份檔案超過 5 MB，請檢查檔案。"); return; }
         var reader = new FileReader();
         reader.onload = function (e) {
           try {
             var data = JSON.parse(e.target.result);
             var store = initNotesStorage();
             if (store) {
-              store.importAll(data);
-              toast("筆記匯入成功");
+              var result = store.importNotes(data);
+              toast("已匯入 " + result.imported + " 則；保留衝突 " + result.conflicts + " 則；略過無效 " + result.invalid + " 則。");
             }
-          } catch (_) {
-            toast("備份檔案格式無效");
+          } catch (err) {
+            toast(err.message || "備份檔案格式無效");
           }
         };
         reader.readAsText(f);
@@ -619,6 +650,18 @@
         sPanel.setAttribute("hidden", "");
         sBtn.setAttribute("aria-expanded", "false");
       }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !sPanel.hidden) {
+        sPanel.hidden = true;
+        sBtn.setAttribute("aria-expanded", "false");
+        sBtn.focus();
+      }
+    });
+    sPanel.addEventListener("click", function () {
+      sPanel.querySelectorAll('[role="radio"]').forEach(function (b) {
+        b.setAttribute("aria-checked", String(b.classList.contains("is-active")));
+      });
     });
 
     // Font
@@ -702,10 +745,23 @@
         btn.classList.add("is-active");
       };
     });
+    sPanel.querySelectorAll('[role="radio"]').forEach(function (b) {
+      b.setAttribute("aria-checked", String(b.classList.contains("is-active")));
+    });
   }
 
   // ── Global Event Delegation ──
   function initEvents() {
+    document.addEventListener("keydown", function (e) {
+      var layer = document.getElementById("drawer-layer");
+      if (layer.hidden) return;
+      if (e.key === "Escape") { e.preventDefault(); closeDrawer(); return; }
+      if (e.key !== "Tab") return;
+      var nodes = Array.from(document.querySelectorAll('#chapter-drawer button, #chapter-drawer input, #chapter-drawer a[href]'));
+      var first = nodes[0], last = nodes[nodes.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
     // Menu & Drawer
     var menuBtn = document.getElementById("menu-button");
     var scrim = document.getElementById("drawer-scrim");
@@ -758,6 +814,12 @@
           e.preventDefault();
           openNote(nBtn.getAttribute("data-seg"));
           return;
+        }
+        var segment = e.target.closest(".stanza-segment");
+        if (segment && !e.target.closest("a,button,input,textarea") && !String(window.getSelection())) {
+          var selected = segment.classList.contains("is-selected");
+          readView.querySelectorAll(".stanza-segment.is-selected").forEach(function (node) { node.classList.remove("is-selected"); });
+          segment.classList.toggle("is-selected", !selected);
         }
       };
     }

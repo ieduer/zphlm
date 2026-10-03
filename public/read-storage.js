@@ -202,7 +202,7 @@
         throw new Error("筆記檔案格式無效");
       }
       if (payload.format !== FORMAT || payload.version !== VERSION) {
-        throw new Error("不是支援的《課本拓展閱讀》筆記檔");
+        throw new Error("不是支援的閱讀筆記備份檔");
       }
       if (payload.sourceSetDigest !== sourceSetDigest) {
         throw new Error("筆記所屬文本版本不同，已拒絕匯入");
@@ -275,10 +275,9 @@
     });
   }
 
-  window.GYDBStorage = {
+  window.ZPHLMStorage = {
     VERSION: VERSION,
     FORMAT: FORMAT,
     create: create,
   };
-  window.KTYDStorage = window.GYDBStorage;
 }(window));

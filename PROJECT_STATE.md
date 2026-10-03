@@ -1,3 +1,9 @@
+# 2026-10-02 閱讀體驗修復候選
+
+使用者已授權定位底欄問題、優化書架內閱讀體驗並部署新版。修改限於本站 UI：浮鈕避讓底欄、安全區高度、切頁保留位置、章節請求競態、目錄焦點/鍵盤操作、設定狀態、本機私人筆記。原文及來源 API/資料庫不變。7 項測試及內容/設定/發布邊界通過；手機實際操作與筆記保存後重載讀回通過。尚待候選與正式發布回讀。
+
+此次版本、接受時間和回退權威記於 `/Users/ylsuen/CF/reports/operations/coread-reader-ux-20261002/REPORT.md`；當前正式回退基線是 `6e6e5a4d-ad5d-4821-849f-bdab0999f186`，deployment `d46a3fda-b1e0-4015-858f-ab8e0e96dfa8`。
+
 # PROJECT_STATE for `zphlm` (紅樓夢脂評匯校本)
 
 ## Current Status
